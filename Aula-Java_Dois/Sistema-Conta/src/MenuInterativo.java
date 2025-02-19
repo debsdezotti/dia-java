@@ -31,29 +31,14 @@ public class MenuInterativo {
             scanner.nextLine(); // Consumir a quebra de linha
 
             switch (option) {
-                case 1:
-                    Maquina.consultarSaldo();
-                    break;
-                case 2:
-                    Maquina.consultarChequeEspecial();
-                    break;
-                case 3:
-                    Maquina.usoCheque();
-                    break;
-                case 4:
-                    Maquina.depositar();
-                    break;
-                case 5:
-                    Maquina.sacarDinheiro();
-                    break;
-                case 6:
-                    Maquina.pagarBoleto();
-                    break;
-                case 0:
-                    System.out.println("Saindo...");
-                    break;
-                default:
-                    System.out.println("Opção inválida");
+                case 1 -> Maquina.consultarSaldo();
+                case 2 -> Maquina.consultarChequeEspecial();
+                case 3 -> Maquina.usoCheque();
+                case 4 -> Maquina.depositar();
+                case 5 -> Maquina.sacarDinheiro();
+                case 6 -> Maquina.pagarBoleto();
+                case 0 -> System.out.println("Saindo...");
+                default -> System.out.println("Opção inválida");
             }
 
         } while (option != 0);
