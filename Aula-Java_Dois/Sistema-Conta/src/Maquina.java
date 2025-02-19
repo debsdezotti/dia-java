@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Maquina {
 
-
     private double saque;
     private double saldo;
     private double chequeespecial;
@@ -41,29 +40,30 @@ public class Maquina {
 
     public void sacarDinheiro() {
         System.out.println("Qual o valor do saque? ");
-        double saque = scanner.nextDouble();
+        this.saque = scanner.nextDouble();
         System.out.println("Sacando R$" + saque + "...");
-        // não realizará o saque
+    
+        // Verifica se o saldo é suficiente
         if (saldo < saque) {
             System.out.println("Saldo insuficiente. (Saldo atual: R$" + saldo + ")");
         }
-        // não usará limite
-        if ((saldo - chequeespecial) > saque) {
-            saldo = this.saldo - saque;
-            System.out.println("Realizando saldo...");
+        // Verifica se o saque pode ser realizado sem usar o cheque especial
+        else if ((saldo - chequeespecial) > saque && saldo > saque) {
+            saldo -= saque; // Atualiza o saldo
+            System.out.println("Realizando saque...");
             System.out.println("Saldo atualizado para R$" + saldo);
         }
-        // usará limite
-        if ((saldo - chequeespecial) < saque && saldo > saque ) {
-            taxa = (saque - (saldo - chequeespecial))*0.2;
-            saldo = this.saldo - saque;
-            System.out.println("Realizando saldo...");
+        // Verifica se será necessário usar o cheque especial
+        else if ((saldo - chequeespecial) < saque && saldo > saque) {
+            taxa = (saque - (saldo - chequeespecial)) * 0.2;
+            saldo -= saque; // Atualiza o saldo
+            usochequeespecial = true; // Marca que o cheque especial foi usado
+            System.out.println("Realizando saque...");
             System.out.println("Saldo atualizado para R$" + saldo);
             System.out.println("Taxa do cheque especial R$" + taxa);
-            this.usochequeespecial = true;
         }
-
     }
+    
 
     public boolean getUsoCheque(){
         return usochequeespecial;
@@ -80,7 +80,7 @@ public class Maquina {
 
     public void pagarBoleto() {
         System.out.println("Qual o valor do boleto? ");
-        double saque = scanner.nextDouble();
+        this.saque = scanner.nextDouble();
         System.out.println("Sacando R$" + saque + "...");
         // não realizará o saque
         if (saldo < saque) {
