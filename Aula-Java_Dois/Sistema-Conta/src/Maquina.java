@@ -30,7 +30,7 @@ public class Maquina {
 
     public void consultarSaldo() {
         System.out.println("Seu saldo atual é de: " + saldo);
-        System.out.println("Cheque especial: " + chequeespecial);
+        System.out.println("Cheque Especial: " + chequeespecial);
     }
 
 
@@ -58,7 +58,7 @@ public class Maquina {
             usochequeespecial = true; // Marca que o cheque especial foi usado
             System.out.println("Realizando " + descricao + "...");
             System.out.println("Saldo atualizado para R$" + saldo);
-            System.out.println("Taxa do cheque especial R$" + taxa);
+            System.out.println("Taxa do cheque Especial R$" + taxa);
         }
     }
 
@@ -81,10 +81,10 @@ public class Maquina {
 
     public void usoCheque() {
         if (getUsoCheque()) {
-            System.out.println("Uso de cheque especial --> Taxa de R$" + taxa);
+            System.out.println("Uso de Cheque Especial --> Taxa de R$" + taxa);
         }
         if (getUsoCheque() == false) {
-            System.out.println("Sem uso de cheque especial");
+            System.out.println("Sem uso de Cheque Especial");
         }
     }
 

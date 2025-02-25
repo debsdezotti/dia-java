@@ -10,8 +10,8 @@ public class MenuInterativo {
     public static void main(String[] args) {
         int option;
 
-        System.out.println("---- bem vinda -----");
-        System.out.println("---- deposite -----");
+        System.out.println("---- Bem vinde! -----");
+        System.out.println("---- Faça seu primeiro deposito -----");
         double deposito = scanner.nextDouble();
         AbrirConta.abraSuaConta(deposito);
         Maquina.setSaldo(AbrirConta.getSaldo());
