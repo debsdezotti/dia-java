@@ -1,6 +1,8 @@
 package aplicativo;
 
 import java.util.Scanner;
+import interfacesapp.AbrirContaApp;
+
 
 public class AppBanco {
 
