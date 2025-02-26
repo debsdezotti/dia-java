@@ -1,7 +1,7 @@
 package iphone.modelos;
 
-import java.util.Scanner;
 import iphone.interfaces.Telefone;
+import java.util.Scanner;
 
 public class AparelhoTelefonico implements Telefone {
     private int telefone;
@@ -18,11 +18,10 @@ public class AparelhoTelefonico implements Telefone {
     }
 
     @Override
-    public int escolherTelefone() {
+    public void escolherTelefone() {
         System.out.println("Para quem você gostaria de telefonar?");
         telefone = scanner.nextInt();
         System.out.println("Ligando para " + telefone);
-        return telefone;
     }
 
     public int getTelefone() {
