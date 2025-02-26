@@ -1,21 +1,36 @@
 package iphone.app;
 
-import java.util.Scanner;
-
+import iphone.interfaces.ReprodutorMusic;
 import iphone.modelos.AparelhoTelefonico;
 import iphone.modelos.NavegadorInternet;
+import iphone.modelos.ReprodutorDeAudioAlternativo;
 import iphone.modelos.ReprodutorMusical;
+import java.util.Scanner;
 
 public class Iphone {
 
     private final static Scanner scanner = new Scanner(System.in);
-    private final static ReprodutorMusical musicPlayer = new ReprodutorMusical();
+
     private final static NavegadorInternet navegador = new NavegadorInternet();
     private final static AparelhoTelefonico telefone = new AparelhoTelefonico();
+
+    private static ReprodutorMusic musicPlayer2;
 
     public static void main(String[] args) throws Exception {
         
         int option;
+
+        System.out.println("Escolha o tipo de reprodutor musical:");
+        System.out.println("1 - Reprodutor Musical");
+        System.out.println("2 - Reprodutor de Áudio Alternativo");
+        int tipoReprodutor = scanner.nextInt();
+        scanner.nextLine(); // Consumir a quebra de linha
+
+        if (tipoReprodutor == 1) {
+            musicPlayer2 = new ReprodutorMusical();
+        } else {
+            musicPlayer2 = new ReprodutorDeAudioAlternativo();
+        }
 
         do {
             System.out.println("Escolha uma das opções ===");
@@ -31,8 +46,8 @@ public class Iphone {
             scanner.nextLine(); // Consumir a quebra de linha
 
             switch (option) {
-                case 1 -> musicPlayer.escolherMusica();
-                case 2 -> musicPlayer.pausarMusica();
+                case 1 -> musicPlayer2.escolherMusica();
+                case 2 -> musicPlayer2.pausarMusica();
                 case 3 -> navegador.escolherSite();
                 case 4 -> {
                     // Implementar lógica para abrir uma nova aba, se necessário
