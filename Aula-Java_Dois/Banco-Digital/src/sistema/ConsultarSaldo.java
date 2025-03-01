@@ -1,15 +1,14 @@
+// Classe ConsultarSaldo - Responsável por consultas de saldo
 package sistema;
 
-import interfacesapp.RealizarSaqueApp;
+public class ConsultarSaldo {
+    private final Conta conta;
 
-public class ConsultarSaldo implements RealizarSaqueApp {
-
-    private double saldo;
-    private double chequeespecial;
-
-    public void consultarSaldo() {
-        System.out.println("Seu saldo atual é de: " + saldo);
-        System.out.println("Cheque Especial: " + chequeespecial);
+    public ConsultarSaldo(Conta conta) {
+        this.conta = conta;
     }
 
+    public void exibirSaldo() {
+        System.out.println("Saldo atual: R$" + conta.getSaldo());
+    }
 }

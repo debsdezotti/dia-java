@@ -1,40 +1,23 @@
+// Classe AbrirConta - Responsável pela criação da conta
 package sistema;
 
 import interfacesapp.AbrirContaApp;
 
-public class AbrirConta implements AbrirContaApp {
-    private double deposito;
-    private double saldo;
-    private double chequeespecial;
+public class AbrirConta extends Conta implements AbrirContaApp {
 
+    public AbrirConta(double depositoInicial) {
+        super(depositoInicial); // Chama o construtor da classe Conta
+        System.out.println("Sua conta foi aberta com sucesso!");
+    }
+
+    @Override
     public void abraSuaConta(double deposito) {
-        this.deposito = deposito;
-        if (this.deposito <= 500.0) {
-            System.out.println("Seu primeiro deposito foi de: R$" + deposito);
-            this.chequeespecial = 50.0;
-            System.out.println("Seu cheque especial é de: R$" + chequeespecial);
-            saldo = deposito + chequeespecial;
-            System.out.println("O saldo total é de: R$" + saldo);
-        }
-        if (this.deposito > 500.0) {
-            System.out.println("Seu primeiro deposito foi de: R$" + deposito);
-            this.chequeespecial = deposito*0.5;
-            System.out.println("Seu cheque espevial é de: R$" + chequeespecial);
-            saldo = deposito + chequeespecial;
-            System.out.println("O saldo total é de: R$" + saldo);
-        }
+        // Neste caso, o construtor já inicializa tudo, então podemos apenas exibir os dados
+        System.out.println("Conta já aberta com saldo: R$" + getSaldo());
     }
 
-    public double getSaldo(){
-        return saldo;
-    }
-
-    public double getChequeEspecial(){
-        return chequeespecial;
-    }
-
-    public void setDeposito(double deposito) {
-        this.deposito = deposito;
+    // Método para atualizar o saldo
+    public void atualizarSaldo(double novoSaldo) {
+        setSaldo(novoSaldo);
     }
 }
-
