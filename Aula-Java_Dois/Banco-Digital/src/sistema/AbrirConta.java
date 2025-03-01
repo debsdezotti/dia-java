@@ -3,21 +3,12 @@ package sistema;
 
 import interfacesapp.AbrirContaApp;
 
-public class AbrirConta extends Conta implements AbrirContaApp {
-
-    public AbrirConta(double depositoInicial) {
-        super(depositoInicial); // Chama o construtor da classe Conta
-        System.out.println("Sua conta foi aberta com sucesso!");
-    }
+public class AbrirConta implements AbrirContaApp {
 
     @Override
-    public void abraSuaConta(double deposito) {
-        // Neste caso, o construtor já inicializa tudo, então podemos apenas exibir os dados
-        System.out.println("Conta já aberta com saldo: R$" + getSaldo());
-    }
-
-    // Método para atualizar o saldo
-    public void atualizarSaldo(double novoSaldo) {
-        setSaldo(novoSaldo);
+    public Conta abrirConta(double depositoInicial) {
+        Conta novaConta = new Conta(depositoInicial);
+        System.out.println("Sua conta foi aberta com sucesso!");
+        return novaConta;
     }
 }

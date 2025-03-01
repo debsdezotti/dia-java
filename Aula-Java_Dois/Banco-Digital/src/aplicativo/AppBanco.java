@@ -3,6 +3,7 @@ package aplicativo;
 
 import java.util.Scanner;
 import sistema.AbrirConta;
+import sistema.Conta;
 import sistema.Depositar;
 import sistema.Saque;
 
@@ -14,8 +15,11 @@ public class AppBanco {
         System.out.println("---- Faça seu primeiro depósito -----");
         double depositoInicial = scanner.nextDouble();
 
-        // Criamos a conta e passamos para saque
-        AbrirConta conta = new AbrirConta(depositoInicial);
+        // Criamos a conta
+        AbrirConta abertura = new AbrirConta();
+        Conta conta = abertura.abrirConta(depositoInicial);
+
+        // Criamos serviços para saque e depósito
         Saque saque = new Saque(conta);
         Depositar depositar = new Depositar(conta);
 
@@ -34,8 +38,7 @@ public class AppBanco {
                 case 2 -> {
                     System.out.println("Digite o valor do saque:");
                     double valorSaque = scanner.nextDouble();
-                    scanner.nextLine(); // Consumir a quebra de linha
-                    saque.sacar(valorSaque, "Saque");
+                    saque.sacar(valorSaque, "saque");
                 }
                 case 3 -> depositar.depositar();
                 case 0 -> System.out.println("Saindo...");

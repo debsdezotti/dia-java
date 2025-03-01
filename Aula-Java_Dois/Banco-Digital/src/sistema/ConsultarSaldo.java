@@ -10,5 +10,6 @@ public class ConsultarSaldo {
 
     public void exibirSaldo() {
         System.out.println("Saldo atual: R$" + conta.getSaldo());
+        System.out.println("Seu cheque especial: R$" + conta.getChequeEspecial());
     }
 }
