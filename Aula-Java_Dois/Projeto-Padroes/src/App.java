@@ -1,6 +1,9 @@
-import Strategy.Comportamento;
+import singleton.SingletonEager;
+import singleton.SingletonLazy;
+import singleton.SingletonLazyHolder;
+import strategy.Comportamento;
 import strategy.ComportamentoAgressivo;
-import strategy.ComportamentoDefesivo;
+import strategy.ComportamentoDefensivo;
 import strategy.ComportamentoNormal;
 import strategy.Robo;
 
@@ -29,6 +32,10 @@ public class App {
         lazyholder = SingletonLazyHolder.getInstancia();
         System.out.println(lazyholder);
 
+
+        System.out.println("---------------");
+        System.out.println("---------------");
+
         // Strategy
 
         Comportamento normal = new ComportamentoNormal();
@@ -37,9 +44,24 @@ public class App {
 
         Robo robo = new Robo();
         robo.setComportamento(normal);
+        robo.mover();
+        robo.mover();
 
+        robo.setComportamento(defensivo);
+        robo.mover();
+
+        robo.setComportamento(normal);
+        robo.mover();
+
+        robo.setComportamento(agressivo);
         robo.mover();
         robo.mover();
+
+        System.out.println("---------------");
+        System.out.println("---------------");
+
+        // Facade
+
 
 
 

@@ -1,7 +1,5 @@
 package strategy;
 
-import Strategy.Comportamento;
-
 public class Robo {
     private Comportamento comportamento;
 
