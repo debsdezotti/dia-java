@@ -1,7 +1,6 @@
-package one.digitainnovation.gof.service;
+package one.digitainnovation.gof.servico;
 
-
-import one.digitalinnovation.gof.modelo.Cliente;
+import one.digitainnovation.gof.modelo.Cliente;
 
 /**
  * Interface que define o padrão <b>Strategy</b> no domínio de cliente. Com
@@ -12,9 +11,9 @@ import one.digitalinnovation.gof.modelo.Cliente;
  */
 public interface ClienteService {
 
-	Iterable<Cliente> buscarTodos();
+	Iterable<one.digitainnovation.gof.modelo.Cliente> buscarTodos();
 
-	Cliente buscarPorId(Long id);
+	one.digitainnovation.gof.modelo.Cliente buscarPorId(Long id);
 
 	void inserir(Cliente cliente);
 
