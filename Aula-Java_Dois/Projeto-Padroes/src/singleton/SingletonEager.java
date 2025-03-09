@@ -1,3 +1,4 @@
+package singleton;
 /*Singleton apressado 
  * ele já instancia assim que chamado, sem verificar
 */

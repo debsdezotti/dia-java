@@ -1,3 +1,4 @@
+package singleton;
 /*Singleton preguiçoso */
 
 public class SingletonLazy {
