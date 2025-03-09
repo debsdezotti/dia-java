@@ -12,11 +12,11 @@ public class CepApi {
         return instancia;
     }
 
-    public void recuperarCidade(String cep){
+    public String recuperarCidade(String cep){
         return "Araraquara";
     }
 
-    public void recuperarEstado(String cep){
+    public String recuperarEstado(String cep){
         return "SP";
     }
 }
