@@ -46,8 +46,8 @@
 		<!-- OpenAPI/Swagger (adicionado manualmente) -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>${openapi.version}</version>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.5.0</version> <!-- Última versão estável (março/2024) -->
 		</dependency>
 		
 		<dependency>
